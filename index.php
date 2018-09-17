@@ -26,16 +26,16 @@
           $cek_data = mysqli_query($conn, "SELECT * FROM tb_usuario WHERE
           usuario = '".$_POST['usuario']."' AND password = '".$_POST['password']."'");
           $data = mysqli_fetch_array($cek_data);
-          $level = $data['tipo_usuario'];
-          $nama = $data['nombre_usuario'];
+          $level = $data['id_privilegio'];
+          $nama = $data['usuario'];
           if(mysqli_num_rows($cek_data) > 0){
             session_start();
             $_SESSION['nama'] = $nama;
             if($level == 1){
               header('location:admin.php');
-            }elseif($level == 2){
-              header('location:alumno.php');
             }elseif($level == 3){
+              header('location:alumno.php');
+            }elseif($level == 2){
               header('location:maestro.php');
             }
           }else{

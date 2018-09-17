@@ -4,17 +4,15 @@
     require 'Modulo/left_panel.php';
 
 
-    if (isset($_POST["btn_nuevo_usuario"]))
+    if (isset($_POST["btn_eliminar_usuario"]))
     {
-        $btn=$_POST["btn_nuevo_usuario"];
-        if($btn == "Agregar usuario")
+        $btn=$_POST["btn_eliminar_usuario"];
+        if($btn == "Eliminar usuario")
         {
-            $usuario=$_POST['usuario'];
-            $password=$_POST['password'];
-            $nombre_usuario=$_POST['nombre_usuario'];
-            $privilegio=$_POST['privilegio'];
+            $id_usuario=$_POST['id_usuario'];
+          
             
-            $query = "CALL SP_USUARIO_CREATE('$usuario','$password','$nombre_usuario','$privilegio')";
+            $query = "CALL SP_USUARIO_DELETE('$id_usuario')";
             $re = mysqli_query($conn, $query);
             if(!$re)
             {echo 'No se pueden mostrar los datos desde la consulta: $query !!';
@@ -96,46 +94,66 @@
                             </div>
                             
                             <form name="fu" action="" method="POST">
+                             
                                 <div class="form-group">
-                                    <label class=" form-control-label">Nombre de usuario</label>
+                                    <label class=" form-control-label">Id del usuario</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input class="form-control" name ="nombre_usuario">
+                                        <input class="form-control" name ="id_usuario">
                                     </div>
                                     
                                 </div>
-                                <div class="form-group">
-                                    <label class=" form-control-label">Usuario</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input class="form-control" name ="usuario">
-                                    </div>
-                                    
-                                </div>
-                                <div class="form-group">
-                                    <label class=" form-control-label">Password</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input class="form-control" type="password" name ="password">
-                                    </div>
-                                    
-                                </div>
+                    
 
-                                  <div class="form-group">
-                                    <label class=" form-control-label">Tipo de Usuario</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input class="form-control" name ="privilegio">
-                                    </div>
-                                    
-                                </div>
-
-                                     <input type="submit" name="btn_nuevo_usuario" value="Agregar usuario" />
+                                     <input type="submit" name="btn_eliminar_usuario" value="Eliminar usuario" />
                                 
                                 </form>
                             
                         </div>
                     </div>
+                     <div class="col-xs-6 col-sm-6">
+                         <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Usuarios existentes</strong>
+                        </div>
+                        <div class="card-body">
+                                <?php
+                                        include ("conexion.php");
+                                        $query = "CALL SP_USUARIO_READ";
+                                        $res = mysqli_query($conn, $query);
+                                        if (!$res) {
+                                            echo "No se puede mostrar los datos desde la consulta $query !!";
+                                            exit;
+                                        }
+                                        echo "<table id='bootstrap-data-table' class='table table-striped table-bordered'>";
+                                        echo "
+                                        <thead>
+                                            <tr>
+                                                <th>ID_USUARIO </th>
+                                                <th>USUARIO</th>
+                                            </tr>
+                                        <thead>
+                                            ";
+                                        while ($row=mysqli_fetch_object($res)) {
+                                            echo "
+                                            <tbody>
+                                                <tr>
+                                                    <td>$row->id_usuario</td>
+                                                    <td>$row->usuario</td>
+                                                   
+                                                </tr>
+                                            </tbody>
+                                            ";
+                                        }
+                                        echo "</table>";
+                                ?>
+                            
+                        </div>
+                    </div>
+
+
+
+                </div>
 
                
 

@@ -8,28 +8,27 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="./"><img src="Modulo/Template/images/logo.png" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="Modulo/Template/images/logo2.png" alt="Logo"></a>
+               
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
-                    </li>
+                    
                     <h3 class="menu-title">Alumnos</h3><!-- /.menu-title -->
                   
         
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Datos Alumnos</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-address-card"></i>Datos Alumnos</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="agregar_alumno.php">Agregar Alumno</a></li>
+                            <li><i class="menu-icon fa fa-user-plus"></i><a href="agregar_alumno.php">Agregar Alumno</a></li>
+                            <li><i class="menu-icon fa fa-user-times"></i><a href="eliminar_alumno.php">Eliminar Alumno</a></li>
                         </ul>
                     </li>
                        <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Reporte de Alumnos</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Reporte de Alumnos</a>
                         <ul class="sub-menu children dropdown-menu">
 
-                            <li><i class="fa fa-table"></i><a href="Modulo/Template/tables-data.html">Reporte General</a></li>
+                            <li><i class="fa fa-thumb-tack"></i><a href="reporte_alumno.php">Reporte General</a></li>
                         </ul>
                     </li>
 
@@ -37,34 +36,34 @@
 
                   
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Datos Maestro</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user-circle"></i>Datos Maestro</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="agregar_maestro.php">Agregar Maestro</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="Template/forms-advanced.html">Advanced Form</a></li>
+                            <li><i class="menu-icon fa fa-user-plus"></i><a href="agregar_maestro.php">Agregar Maestro</a></li>
+                            <li><i class="menu-icon fa fa-user-times"></i><a href="eliminar_maestro.php">Eliminar Maestro</a></li>
                         </ul>
                     </li>
                        <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Reporte de Maestro</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bars"></i>Reporte de Maestro</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
+                            <li><i class="fa fa-table"></i><a href="reporte_maestro.php">Reporte General</a></li>
+                            
                         </ul>
                     </li>
                     <h3 class="menu-title">Usuarios</h3><!-- /.menu-title -->
 
                   
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Datos Usuarios</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Datos Usuarios</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="agregar_usuario.php">Agregar Usuario</a></li>
-            
+                            <li><i class="menu-icon fa fa-user-plus"></i><a href="agregar_usuario.php">Agregar Usuario</a></li>
+                            <li><i class="menu-icon fa fa-user-times"></i><a href="eliminar_usuario.php">Eliminar Usuario</a></li>
                         </ul>
                     </li>
                        <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Reporte de Ususarios</a>
                         <ul class="sub-menu children dropdown-menu">
                           
-                            <li><i class="fa fa-table"></i><a href="Template/tables-data.html">Reporte General</a></li>
+                            <li><i class="fa fa-table"></i><a href="reporte_usuario.php">Reporte General</a></li>
                         </ul>
                     </li>
                 </ul>

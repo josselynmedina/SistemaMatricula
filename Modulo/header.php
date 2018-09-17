@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="Modulo/Template/assets/css/flag-icon.min.css">
     <link rel="stylesheet" href="Modulo/Template/assets/css/cs-skin-elastic.css">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="Modulo/Template/assets/css/lib/datatable/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="Modulo/Template/assets/scss/style.css">
     <link href="Modulo/Template/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
