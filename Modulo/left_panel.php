@@ -57,6 +57,7 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-user-plus"></i><a href="agregar_maestro.php">Agregar Maestro</a></li>
                             <li><i class="menu-icon fa fa-user-times"></i><a href="eliminar_docente.php">Eliminar Maestro</a></li>
+                             <li><i class="menu-icon fa fa-user-plus"></i><a href="">Agregar Asignaturas</a></li>
                         </ul>
                     </li>
                        <li class="menu-item-has-children dropdown">
