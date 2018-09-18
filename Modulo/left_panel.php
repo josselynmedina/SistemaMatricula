@@ -39,13 +39,13 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user-circle"></i>Datos Maestro</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-user-plus"></i><a href="agregar_maestro.php">Agregar Maestro</a></li>
-                            <li><i class="menu-icon fa fa-user-times"></i><a href="eliminar_maestro.php">Eliminar Maestro</a></li>
+                            <li><i class="menu-icon fa fa-user-times"></i><a href="eliminar_docente.php">Eliminar Maestro</a></li>
                         </ul>
                     </li>
                        <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bars"></i>Reporte de Maestro</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="reporte_maestro.php">Reporte General</a></li>
+                            <li><i class="fa fa-table"></i><a href="reporte_docente.php">Reporte General</a></li>
                             
                         </ul>
                     </li>

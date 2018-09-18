@@ -1,7 +1,34 @@
 <?php 
+    include('conexion.php');
     require 'Modulo/header.php';
     require 'Modulo/left_panel.php';
-   
+
+
+    if (isset($_POST["btn_nuevo_maestro"]))
+    {
+        $btn=$_POST["btn_nuevo_maestro"];
+        if($btn == "Agregar maestro")
+        {
+            $nombres=$_POST['nombres'];
+            $primer_apellido=$_POST['primer_apellido'];
+            $segundo_apellido=$_POST['segundo_apellido'];
+            $direccion=$_POST['direccion'];
+            $telefono=$_POST['telefono'];
+            $fecha_nacimiento=$_POST['fecha_nacimiento'];
+            $fecha_ingreso=$_POST['fecha_ingreso'];
+            $genero=$_POST['genero'];
+            
+            $query = "CALL SP_DOCENTE_CREATE('$nombres','$primer_apellido','$segundo_apellido','$direccion','$telefono','$fecha_nacimiento','$fecha_ingreso','$genero','0')";
+            $re = mysqli_query($conn, $query);
+            if(!$re)
+            {echo 'No se pueden mostrar los datos desde la consulta: $query !!';
+            exit;}
+            
+            //echo "<script> alert('Un usuario ha sido Almacenado en la Base de Datos');</script>";
+                
+        }
+    }
+
 ?>
     <!-- Right Panel -->
 
@@ -69,19 +96,12 @@
                                 <strong>Datos del maestro</strong> 
                             </div>
                             <div class="card-body card-block">
+                            <form name="fu" action="" method="POST">
                                 <div class="form-group">
-                                    <label class=" form-control-label">Primer nombre</label>
+                                    <label class=" form-control-label">Nombres</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input class="form-control">
-                                    </div>
-                                    
-                                </div>
-                                <div class="form-group">
-                                    <label class=" form-control-label">Segundo nombre</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input class="form-control">
+                                        <input class="form-control" name ="nombres">
                                     </div>
                                     
                                 </div>
@@ -89,7 +109,7 @@
                                     <label class=" form-control-label">Primer apellido</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input class="form-control">
+                                        <input class="form-control" name="primer_apellido">
                                     </div>
                                     
                                 </div>
@@ -97,79 +117,63 @@
                                     <label class=" form-control-label">Segundo apellido</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input class="form-control">
+                                        <input class="form-control" name="segundo_apellido">
                                     </div>
                                     
                                 </div>
-                                <div class="form-group">
-                                    <label class=" form-control-label">Fecha de nacimiento</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        <input class="form-control">
-                                    </div>
-                                    <small class="form-text text-muted">ex. 10/06/1995</small>
-                                </div>
-                                <div class="form-group">
-                                    <label class=" form-control-label">Telefono</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                        <input class="form-control">
-                                    </div>
-                                    <small class="form-text text-muted">ex. (999) 999-9999</small>
-                                </div>
-                                <div class="form-group">
+
+                                 <div class="form-group">
                                     <label class=" form-control-label">Direccion</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-fax"></i></div>
-                                        <input class="form-control">
+                                        <input class="form-control" name="direccion">
                                     </div>
                                
                                </div>
+
+                                 <div class="form-group">
+                                    <label class=" form-control-label">Telefono</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                        <input class="form-control" name="telefono">
+                                    </div>
+                                    <small class="form-text text-muted">ex. (999) 999-9999</small>
+                                </div>
         
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-6 col-sm-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Genero</strong>
-                            </div>
-                            <div class="card-body">
-
-                                  <select data-placeholder="Seleccione el Genero del alumno.." class="standardSelect" tabindex="1">
-                                    <option value=""></option>
-                                    <option value="Femenino">Femenino</option>
-                                    <option value="Masculino">Masculino</option>
-                                  
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-header">
-                                <strong class="card-title">Ingreso</strong>
-                            </div>
-                          <div class="form-group">
-                           <div class="form-group">
+                                <div class="form-group">
                                     <label class=" form-control-label">Fecha de nacimiento</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        <input class="form-control">
+                                        <input class="form-control" name="fecha_nacimiento">
                                     </div>
-                                    <small class="form-text text-muted">ex. 10/06/1995</small>
+                                    <small class="form-text text-muted">ex. Año/Mes/Dia</small>
                                 </div>
-                        </div>    
+                                  <div class="form-group">
+                                    <label class=" form-control-label">Fecha de ingreso</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                        <input class="form-control" name="fecha_ingreso">
+                                    </div>
+                                    <small class="form-text text-muted">ex. Año/Mes/Dia</small>
+                                </div>
 
+                                  <div class="form-group">
+                                    <label class=" form-control-label">Genero</label>
+                                    <select name="genero" id="select" class="form-control">
+                                        <option value="">Seleccione un Genero</option>
+                                        <option value="Masculino">Masculino</option>
+                                        <option value="Femenino">Femenino</option>
+                                        
+                                    </select>
+                                    
+                                </div>
+                                    <input type="submit" name="btn_nuevo_maestro" value="Agregar maestro" />
+                               </form>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <input type="submit" name = "" value="Agregar" />
-                    </div>
-
-
-
-                </div>
+                  
 
 
             </div><!-- .animated -->

@@ -4,16 +4,15 @@
     require 'Modulo/left_panel.php';
 
 
-    if (isset($_POST["btn_nuevo_usuario"]))
+    if (isset($_POST["btn_eliminar_maestro"]))
     {
-        $btn=$_POST["btn_nuevo_usuario"];
-        if($btn == "Agregar usuario")
+        $btn=$_POST["btn_eliminar_maestro"];
+        if($btn == "Eliminar maestro")
         {
-            $usuario=$_POST['usuario'];
-            $password=$_POST['password'];
-            $tb_perfiles_id_perfil=$_POST['tb_perfiles_id_perfil'];
+            $id_docente=$_POST['id_docente'];
+          
             
-            $query = "CALL SP_USUARIO_CREATE('$usuario','$password','$tb_perfiles_id_perfil')";
+            $query = "CALL SP_DOCENTE_DELETE('$id_docente')";
             $re = mysqli_query($conn, $query);
             if(!$re)
             {echo 'No se pueden mostrar los datos desde la consulta: $query !!';
@@ -91,44 +90,75 @@
                     <div class="col-xs-6 col-sm-6">
                         <div class="card">
                             <div class="card-header">
-                                <strong>Datos del Usuario</strong> 
+                                <strong>Datos del Docente</strong> 
                             </div>
                             
                             <form name="fu" action="" method="POST">
+                             
                                 <div class="form-group">
-                                    <label class=" form-control-label">Usuario</label>
+                                    <label class=" form-control-label">Id del docente</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input class="form-control" name ="usuario">
+                                        <input class="form-control" name ="id_docente">
                                     </div>
                                     
                                 </div>
-                                <div class="form-group">
-                                    <label class=" form-control-label">Password</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                        <input class="form-control" type="password" name ="password">
-                                    </div>
-                                    
-                                </div>
+                    
 
-                                  <div class="form-group">
-                                    <label class=" form-control-label">Perfil del Usuario</label>
-                                    <select name="tb_perfiles_id_perfil" id="select" class="form-control">
-                                        <option value="">Seleccione un perfil</option>
-                                        <option value="1">Administrador</option>
-                                        <option value="2">Maestro</option>
-                                        <option value="3">Alumno</option>
-                                    </select>
-                                    
-                                </div>
-
-                                     <input type="submit" name="btn_nuevo_usuario" value="Agregar usuario" />
+                                     <input type="submit" name="btn_eliminar_maestro" value="Eliminar maestro" />
                                 
                                 </form>
                             
                         </div>
                     </div>
+                     <div class="col-xs-6 col-sm-6">
+                         <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Maestros existentes</strong>
+                        </div>
+                        <div class="card-body">
+                                <?php
+                                        include ("conexion.php");
+                                        $query = "CALL SP_DOCENTE_READ";
+                                        $res = mysqli_query($conn, $query);
+                                        if (!$res) {
+                                            echo "No se puede mostrar los datos desde la consulta $query !!";
+                                            exit;
+                                        }
+                                        echo "<table id='bootstrap-data-table' class='table table-striped table-bordered'>";
+                                        echo "
+                                        <thead>
+                                            <tr>
+                                                <th>ID DOCENTE </th>
+                                                <th>NOMBRES</th>
+                                                <th>PRIMER APELLIDO </th>
+                                                <th>SEGUNDO APELLIDO</th>
+
+                                            </tr>
+                                        <thead>
+                                            ";
+                                        while ($row=mysqli_fetch_object($res)) {
+                                            echo "
+                                            <tbody>
+                                                <tr>
+                                                    <td>$row->id_docente</td>
+                                                    <td>$row->nombres</td>
+                                                    <td>$row->primer_apellido</td>
+                                                    <td>$row->segundo_apellido</td>
+                                                   
+                                                </tr>
+                                            </tbody>
+                                            ";
+                                        }
+                                        echo "</table>";
+                                ?>
+                            
+                        </div>
+                    </div>
+
+
+
+                </div>
 
                
 

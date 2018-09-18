@@ -50,7 +50,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Reporte de Usuarios</a></li>
+                            <li><a href="#">Reporte de Maestros</a></li>
                            
                         </ol>
                     </div>
@@ -65,12 +65,12 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Tabla de Usuario</strong>
+                            <strong class="card-title">Tabla de Maestro</strong>
                         </div>
                         <div class="card-body">
                                 <?php
                                         include ("conexion.php");
-                                        $query = "CALL SP_USUARIO_READ";
+                                        $query = "CALL SP_DOCENTE_READ";
                                         $res = mysqli_query($conn, $query);
                                         if (!$res) {
                                             echo "No se puede mostrar los datos desde la consulta $query !!";
@@ -80,9 +80,14 @@
                                         echo "
                                         <thead>
                                             <tr>
-                                                <th>ID_USUARIO </th>
-                                                <th>USUARIO</th>
-                                                <th>PERFIL DEL USUARIO</th>
+                                                <th>NOMBRES </th>
+                                                <th>PRIMER APELLIDO</th>
+                                                <th>SEGUNDO APELLIDO</th>
+                                                <th>DIRECCION </th>
+                                                <th>TELEFONO</th>
+                                                <th>FECHA NACIMIENTO</th>
+                                                <th>FECHA INGRESO </th>
+
                                             </tr>
                                         <thead>
                                             ";
@@ -90,9 +95,13 @@
                                             echo "
                                             <tbody>
                                                 <tr>
-                                                    <td>$row->id_usuario</td>
-                                                    <td>$row->usuario</td>
-                                                    <td>$row->tb_perfiles_id_perfil</td>
+                                                    <td>$row->nombres</td>
+                                                    <td>$row->primer_apellido</td>
+                                                    <td>$row->segundo_apellido</td>
+                                                    <td>$row->direccion</td>
+                                                    <td>$row->telefono</td>
+                                                    <td>$row->fecha_nacimiento</td>
+                                                    <td>$row->fecha_ingreso</td>
                                                 </tr>
                                             </tbody>
                                             ";

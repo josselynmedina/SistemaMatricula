@@ -23,10 +23,10 @@
 <?php
         if(isset($_POST['login'])){
           include "conexion.php";
-          $cek_data = mysqli_query($conn, "SELECT * FROM tb_usuario WHERE
+          $cek_data = mysqli_query($conn, "SELECT * FROM tb_usuarios WHERE
           usuario = '".$_POST['usuario']."' AND password = '".$_POST['password']."'");
           $data = mysqli_fetch_array($cek_data);
-          $level = $data['id_privilegio'];
+          $level = $data['tb_perfiles_id_perfil'];
           $nama = $data['usuario'];
           if(mysqli_num_rows($cek_data) > 0){
             session_start();
