@@ -32,6 +32,23 @@
                         </ul>
                     </li>
 
+                    <h3 class="menu-title">Encargado del Alumno</h3><!-- /.menu-title -->
+
+                     <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-address-card"></i>Datos Encargado</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-user-plus"></i><a href="agregar_encargado.php">Agregar encargado</a></li>
+                            <li><i class="menu-icon fa fa-user-times"></i><a href="eliminar_encargado.php">Eliminar encargado</a></li>
+                        </ul>
+                    </li>
+                       <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Reporte de Encargados</a>
+                        <ul class="sub-menu children dropdown-menu">
+
+                            <li><i class="fa fa-thumb-tack"></i><a href="reporte_encargado.php">Reporte General</a></li>
+                        </ul>
+                    </li>
+
                     <h3 class="menu-title">Maestros</h3><!-- /.menu-title -->
 
                   
