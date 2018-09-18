@@ -28,7 +28,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Reporte de Alumnos</a>
                         <ul class="sub-menu children dropdown-menu">
 
-                            <li><i class="fa fa-thumb-tack"></i><a href="reporte_alumno.php">Reporte General</a></li>
+                            <li><i class="fa fa-thumb-tack"></i><a href="reporte_estudiante.php">Reporte General</a></li>
                         </ul>
                     </li>
 
