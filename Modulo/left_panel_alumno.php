@@ -13,21 +13,11 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="index.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
-                    </li>
         
                     <li class="menu-item-has-children dropdown">
                         <a href="matricula.php" > <i class="menu-icon fa fa-th"></i>Matricula</a>
                      
                     </li>
-                       <li class="menu-item-has-children dropdown">
-                        <a href="secciones.php"> <i class="menu-icon fa fa-table"></i>Secciones</a>
-                     
-                    </li>
-
-                    
-
                   
                     <li class="menu-item-has-children dropdown">
                         <a href="notas.php"> <i class="menu-icon fa fa-th"></i>Notas</a>
